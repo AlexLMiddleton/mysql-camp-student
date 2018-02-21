@@ -7,3 +7,7 @@ SELECT * FROM individual where ID in (1,3,5,7,19);
 
 select name from band where genre = 'Alternative' and isTogether = 0;
 select id, name from band where id = 4;
+
+select * from band where name like '% and %';
+select * from individual where firstName like '___';
+select * from band where name like '%s';
