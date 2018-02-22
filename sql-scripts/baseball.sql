@@ -365,3 +365,33 @@ FROM baseball.roster R
 INNER JOIN baseball.team T ON R.teamID = T.ID
 INNER JOIN baseball.player P on R.playerID = P.ID
 ;
+
+SELECT team.ID
+, team.TeamName
+, batting.TeamID
+, batting.Rank
+, batting.BattingAvg
+FROM team
+INNER JOIN batting ON team.ID = batting.TeamID;
+
+select player.ID
+, batting.playerID
+, batting.rank
+, batting.BattingAvg 
+FROM player 
+INNER JOIN batting ON player.ID = batting.playerID where BattingAvg = 331;
+
+select roster.playerID
+, player.ID
+, player.lastName
+, player.firstName 
+FROM roster 
+INNER JOIN player ON roster.playerID = player.ID;
+
+SELECT team.ID 
+, team.TeamName 
+, batting.TeamID 
+, batting.Rank 
+, batting.BattingAvg 
+FROM team INNER JOIN batting ON team.ID = batting.TeamID 
+RIGHT JOIN roster ON team.ID = roster.teamID;
