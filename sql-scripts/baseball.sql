@@ -395,3 +395,27 @@ SELECT team.ID
 , batting.BattingAvg 
 FROM team INNER JOIN batting ON team.ID = batting.TeamID 
 RIGHT JOIN roster ON team.ID = roster.teamID;
+
+select player.ID
+, player.firstName
+, player.lastName
+, batting.playerID 
+FROM batting 
+RIGHT JOIN player ON batting.playerID = player.ID;
+
+select team.id
+, team.teamName
+, roster.teamID 
+FROM team 
+LEFT JOIN roster ON team.id = roster.teamID;
+
+select team.ID
+, team.teamName
+, roster.teamID 
+FROM team 
+INNER JOIN roster ON team.id = roster.teamID;
+
+SELECT * from team 
+LEFT JOIN roster 
+ON team.ID = roster.teamID 
+WHERE roster.ID IS NULL;
